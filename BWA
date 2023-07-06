@@ -1,0 +1,49 @@
+#BWI is an alignment program that allows you to align your fastq sequences to reference genome 
+
+Prior to performing sequences should be pre-processing 
+
+#!/bin/bash
+#SBATCH --job-name=bwa_alignment
+#SBATCH --output="slurm-%j.out"
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=8G
+#SBATCH --time=03:00:00
+#SBATCH --partition=pi_gerstein
+#SBATCH --mail-type=FAIL
+
+module load BWA/0.7.17-foss-2018a
+
+bwa mem FASTA.FILE /gpfs/gibbs/pi/miranker/maya/NewNanoporeTest/S1_fastq_03012023/pass/fastq_runid_ae9db994dca279b19e9ea133db65f40511f1cf35_0_0.fastq.gz > /gpfs/gibbs/pi/miranker/maya/bwa_index/S1_alignments_030$
+
+
+
+Index the reference genome → bwa index: 
+
+CODE: $ bwa index -a bwtsw input_reference.fasta index_prefix 
+“bwtsw” is for long genomes; it does not work for short genomes 
+Input_reference.fasta is the input file of the reference genome 
+Index_prefix is a given prefix for files that will be produced at the conclusion of the run (the index prefix is the name of the file that appears before file extensions) 
+
+CODE: $ bwa index -a is input_reference.fasta index_prefix 
+“is” is for short genomes; does not work for long genomes 
+
+OUTPUT: .fa, .fa.amb, .fa.ann, .fa.bwt, .fa.pac and .fa.sa files 
+
+Align Your Reads → bwa mem: 
+
+CODE: $ bwa mem index_prefix input_reads_pair_1.fastq input_reads_pair 2.fastq 
+Can also accept single-end data, in which case there would just be one input file 
+Index_prefix is from previous step 
+Other options can be specified at the end of the code (refer BWA manual) 
+
+OUTPUT: .sam file 
+
+To find which modules of bwa are available on the clusters, use “module avail” 
+
+
+
+
+
+
+
