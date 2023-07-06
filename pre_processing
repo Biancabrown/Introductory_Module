@@ -1,2 +1,11 @@
-#FastQC
+FASTQ sequences often consist of adapters and can be of varying quality.
+
+The first step in pre-processing is to check quality scores and the presence of the adapter—a common program for doing this FASTQC. 
+
+#FastQC is a QC-generating program that identifies. 
+Information from Fastqc includes: 
+1. Phred Score quality base score 
+2. 
+
+
 #Adapter Trimming 
