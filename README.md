@@ -16,5 +16,5 @@ In this module, we will cover the following pipelines.
 
 
 This was created by: 
-Maya Geradi, BSc  Maya.geradi@yale.edu
-Bianca Brown, PhD Bianca.brown@yale.edu
+Maya Geradi, BSc  maya.geradi@yale.edu
+Bianca Brown, PhD bianca.brown@yale.edu
