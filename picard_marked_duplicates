@@ -1,0 +1,23 @@
+
+#create picard environemnt
+conda create -n enviornment_name pyhton=3
+conda activate enviornment_name
+mamba install -c bioconda picard
+
+#######Bigmem is partition if oer 150 gb of memory is required to run program. See link https://docs.ycrc.yale.edu/clusters/grace/ 
+
+Picard: 
+
+#!/bin/bash
+#SBATCH --partition=bigmem
+#SBATCH --job-name=picard
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=200g
+#SBATCH --time=8:00:00
+
+module purge
+module load miniconda
+conda activate enviornment_name
+
+picard MarkDuplicates -I dragmap_alignment_all_sorted.bam -O marked_duplicates.bam --REMOVE_DUPLICATES true -M metrics.txt --CREATE_INDEX true
