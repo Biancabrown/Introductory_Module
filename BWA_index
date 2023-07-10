@@ -10,8 +10,7 @@ BWA Index Building:
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=8G
 #SBATCH --time=06:00:00
-#SBATCH -p pi_levine
-#SBATCH -A levine 
+#SBATCH -p your_partition
 #SBATCH --mail-type=FAIL
 
 module load BWA/0.7.17-foss-2018a 
