@@ -14,8 +14,7 @@ Prior to performing sequences should be pre-processing
 
 module load BWA/0.7.17-foss-2018a
 
-bwa mem FASTA.FILE /gpfs/gibbs/pi/miranker/maya/NewNanoporeTest/S1_fastq_03012023/pass/fastq_runid_ae9db994dca279b19e9ea133db65f40511f1cf35_0_0.fastq.gz > /gpfs/gibbs/pi/miranker/maya/bwa_index/S1_alignments_030$
-
+bwa mem *reference.fasta R1.fastq.gz  R2.fastq.fz > alignment.sam
 
 
 Index the reference genome → bwa index: 
