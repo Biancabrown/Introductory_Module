@@ -17,7 +17,6 @@ mamba create -n dragmap -c bioconda dragmap
 #SBATCH --mem-per-cpu=40G
 #SBATCH --time=24:00:00
 #SBATCH --partition=your_parition
-#SBATCH -A partition
 #SBATCH --mail-type=FAIL 
 
 module load miniconda
